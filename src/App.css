@@ -1,0 +1,313 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+.App{
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  overflow:hidden;
+}
+
+:root{
+  --primary-color: #3498db;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px; 
+  width: auto;
+  padding: 5px 20px;
+  background-color: var(--primary-color);
+  box-sizing: border-box; 
+}
+.navlinks{
+  width: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.active{
+  background-color: rgb(255, 255, 255);
+  color: var(--primary-color);
+
+}
+.navlinks button{
+  height: 40px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 35px;
+  background-color: var(--primary-color);
+  /* color: var(--primary-color);0 */
+  color: white;
+
+  border-radius: 25px;
+  font-size: 15px;
+  transition-duration: 0.2s;
+  border: 2px solid white;
+  &:hover{
+    background-color: rgb(255, 255, 255);
+    color: var(--primary-color);
+  }
+}
+.main{
+  /* box-sizing: border-box; */
+  width: 100%;
+  height: 100vh;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  display: grid;
+  height: 90%;
+  width: 1500px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap: 5px;
+
+  margin-top: -50px;
+}
+.two,.three{
+  color: white;
+  padding: 7px;
+}
+.three span{
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+.one{
+  height: auto;
+  width: auto;
+  grid-row: 1/3;
+  grid-column: 1/2;
+  border: 2px solid  var(--primary-color);
+  border-radius: 20px;
+  overflow: auto;
+}
+ .two{
+  height: auto;
+  width: auto;
+  grid-row: 1/2;
+  grid-column: 2/4;
+  border: 2px solid  var(--primary-color);
+  border-radius: 20px;
+ } 
+.three{
+  height: auto;
+  width: auto;
+  grid-row: 3/4;
+  grid-column: 1/3;
+  border: 2px solid  var(--primary-color);
+  border-radius: 20px;
+  overflow: auto;
+  padding: 10px;
+  
+}
+.center{
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  border: 2px solid  var(--primary-color);
+  /* color: var(); */
+  font-size: 25px;
+  border-radius: 20px;
+
+}
+.four{
+  height: auto;
+  width: auto;
+  grid-column: 3/4;
+  grid-row: 2/4;
+  border: 2px solid  var(--primary-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.search-field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  padding: 7px;
+}
+.search-field input{
+  width: 350px;
+  background-color: rgb(65, 65, 65);
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 17px;
+  padding: 10px;
+  padding-left: 10px;
+  border-radius: 50px 0px 0px 50px;
+}
+
+.search-field button{
+  padding: 10px 10px;
+  font-size: 17px;
+  border-radius: 0px 50px 50px 0px;
+  background-color: var(--primary-color);
+}
+.result-field{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 15px;
+  margin-top: 10px;
+
+}
+.data-element{
+  height: auto;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.top-field{
+  /* box-sizing: border-box; */
+  height: auto;
+  border-radius: 10px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+  /* border: 2px solid white; */
+  font-size: 13px;
+  cursor: pointer;
+  background-color: rgb(18, 18, 18);
+  transition-duration: 0.2s;
+}
+.top-field:hover{
+  
+  background-color: rgb(36, 36, 36);
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Style the track (part the scrollbar moves within) */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 255, 0);
+}
+
+/* Style the draggable part of the scrollbar */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  max-height: 10px; 
+  background-color: rgb(255, 255, 255);
+}
+.top-field img{
+  width: 50px;
+  border-radius: 5px;
+}
+.img-poster{
+  border-radius: 10px;
+  border: 2px solid rgb(90, 90, 90);
+  height: 350px;
+}
+.movie-details p{
+  font-weight: 500;
+  color: var(--primary-color);
+  padding: 2px 10px;
+}
+.movie-details p span{
+  font-weight: 400;
+  color: white;
+}
+.usericon{
+  width: 20px;
+  filter: invert(100%);
+  height: 18px;
+}
+.title{
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 5px 10px;
+}
+.title span{
+  font-weight: 600;
+  color: white;
+}
+.title-details p:first-child{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.watchlist-elements{
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  background-color: rgb(20, 20, 20);
+  border-radius: 10px;
+  position: relative;
+
+}
+.watchlist-elements img{
+  height: 80px;
+  border-radius: 10px;
+  border: 2px solid rgb(90, 90, 90);
+}
+.watchlist-details{
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  
+}
+.watchlist-container{
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+.watchlist-container h2{
+  position: sticky;
+  top: 0;
+  width: 90%;
+  text-align: center;
+  background-color: black;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  z-index: 999;
+}
+.del{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 0px 10px 0px 0px;
+  background-color: var(--primary-color);
+}
+.del img{
+  height: 25px;
+  outline: none;
+  border: none;
+}
+.logo{
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Protest Guerrilla';
+}
