@@ -29,7 +29,6 @@ export default function MovieDetails({Id, plotsetter , watchlistsetter, watchlis
       function addclickhandler(){
         watchlistsetter([...watchlist, {title:id.Title, poster:id.Poster, imbdid: Id, year:id.Year}])
       }
-      // console.log(Id)
   return (
     <>
       {
