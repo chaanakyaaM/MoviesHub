@@ -50,7 +50,7 @@ export default function MovieDetails({Id, plotsetter , watchlistsetter, watchlis
                 <p>Director : {id.Director==='N/A' ? <span>unknown</span> : <span>{id.Director}</span>}</p>
                 <p>Cast : {id.Actors==='N/A' ? <span>unknown</span> : <span>{id.Actors}</span>}</p>
                 <p>Runtime : {id.Runtime==='N/A' ? <span>unknown</span> : <span>{id.Runtime}</span>}</p>
-                <p>Add to Watch List : <button onClick={addclickhandler} className='add'>add</button></p>
+                <p>Add to Watch List : <button onClick={addclickhandler} className='add'>Add</button></p>
               </div>
             </div>
           )
