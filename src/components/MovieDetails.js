@@ -3,7 +3,6 @@ import { useState } from 'react';
 import UsersIcon from '../users-icon.png'
 
 export default function MovieDetails({Id, plotsetter , watchlistsetter, watchlist}) {
-    const key = "e3bf8eab";
     const [loading,setloading] = useState(false)
     const [loadtext, setloadtext] = useState('Search any Movie...')
     const [id, setid] = useState('')
