@@ -6,6 +6,8 @@ import MovieDetails from './components/MovieDetails';
 import Search from './components/Search';
 import WatchList from './components/WatchList';
 import { Route,BrowserRouter ,Routes} from 'react-router-dom';
+import About from './components/About';
+import Help from './components/Help';
 
 function App() {
   const [id, setid] = useState()
@@ -29,7 +31,8 @@ function App() {
             <div className="four"><WatchList datalist={watchlist} watchlistsetter={setwatchlist}/></div>
             </Container>}>
           </Route>
-          <Route exact  path="/about" element={<p style={{color:'white'}}>about page lorem90</p>} />
+          <Route exact path="/about" element={<About/>} />
+          <Route exact path="/help" element={<Help/>} />
         </Routes>
           </div>
         </div>

@@ -21,7 +21,7 @@ function Search({idhandler}) {
         let data = await response.json();
         setSearchResult(data.Search || []);
         for (let i = 0; i < data.Search.length; i++) {
-          console.log(data.Search[i]);
+        console.log(data.Search[i]);
         }
         setloading(true);
       } catch (error) {
@@ -31,7 +31,7 @@ function Search({idhandler}) {
 
       }
       
-      
+      console.log()
       return ()=>{
         controller.abort(); 
         
@@ -39,6 +39,11 @@ function Search({idhandler}) {
     }
     fetchData()
   
+  }
+  function keyhandler(e){
+    if (e==='Enter'){
+      Clickhandler()
+    }
   }
   return (
     <div className="search">
@@ -48,6 +53,7 @@ function Search({idhandler}) {
           placeholder="Search..."
           value={searchVal}
           onChange={(e) => setsearchVal(e.target.value)}
+          onKeyUpCapture={(e)=>keyhandler(e.key)}
         />
         <button onClick={Clickhandler}>Search</button>
       </div>
@@ -59,7 +65,7 @@ function Search({idhandler}) {
                     <div className="title-details">
                     <p key={item.Title}>{item.Title}</p>
                     <p>Year: {item.Year} </p>
-                    <p>Rated: {item.Rated}</p>
+                    <p>Type: {item.Type}</p>
                     </div>
                     {
                         item.Poster !== "N/A" ? (
