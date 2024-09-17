@@ -13,12 +13,12 @@ function App() {
   const [watchlist, setwatchlist] = useState([])
 
   return (
+    <BrowserRouter>
     <div className="App">
       <Navbar></Navbar>
       <div className="main">
-      <BrowserRouter>
         <Routes>
-          <Route path="/" element={
+          <Route exact path="/" element={
             <Container>
             MovieHub
             <div className="one"><Search idhandler={setid}/></div>
@@ -28,12 +28,11 @@ function App() {
             <div className="four"><WatchList datalist={watchlist} watchlistsetter={setwatchlist}/></div>
             </Container>}>
           </Route>
-          <Route path="/about" element={'/'}>
-          </Route>
+          <Route exact path="/about" element={<p style={{color:'white'}}>about page lorem90</p>} />
         </Routes>
-      </BrowserRouter>
           </div>
         </div>
+      </BrowserRouter>
   );
 }
 
