@@ -5,13 +5,17 @@ function Search({idhandler}) {
   const [searchVal, setsearchVal] = useState("");
   const [searchResult, setSearchResult] = useState([])
   const [loading, setloading] = useState(true);
-  function clickhandler() {
+  const controller = new AbortController();
+  const [loadingindicator,setloadingindicator] = useState('Loading...')
+  function Clickhandler() {
     console.log(searchVal)
     async function fetchData() {
       setloading(false);
       try {
+        setloadingindicator("Loading...");
         let response = await fetch(
-          `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchVal}`
+          `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchVal}`,
+          {signal: controller.signal}
         );
 
         let data = await response.json();
@@ -22,10 +26,19 @@ function Search({idhandler}) {
         setloading(true);
       } catch (error) {
         console.error("Error fetching data:", error);
+        alert("Movie not found, please check you spelling.");
+        setloadingindicator("Try seaching any other movie...");
+
+      }
+      
+      
+      return ()=>{
+        controller.abort(); 
+        
       }
     }
-
-    fetchData();
+    fetchData()
+  
   }
   return (
     <div className="search">
@@ -36,7 +49,7 @@ function Search({idhandler}) {
           value={searchVal}
           onChange={(e) => setsearchVal(e.target.value)}
         />
-        <button onClick={clickhandler}>Search</button>
+        <button onClick={Clickhandler}>Search</button>
       </div>
       <div className="result-field">
         {loading ? (
@@ -57,11 +70,12 @@ function Search({idhandler}) {
             </div>
           ))
         ) : (
-          <p>Loading...</p>
+          <p>{loadingindicator}</p>
         )}
       </div>
     </div>
   );
 }
+
 
 export default Search;

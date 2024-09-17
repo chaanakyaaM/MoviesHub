@@ -12,6 +12,7 @@ function App() {
   const [plot, setPlot] = useState('')
   const [watchlist, setwatchlist] = useState([])
 
+
   return (
     <BrowserRouter>
     <div className="App">
@@ -28,7 +29,7 @@ function App() {
             <div className="four"><WatchList datalist={watchlist} watchlistsetter={setwatchlist}/></div>
             </Container>}>
           </Route>
-          <Route exact path="/about" element={<p style={{color:'white'}}>about page lorem90</p>} />
+          <Route exact  path="/about" element={<p style={{color:'white'}}>about page lorem90</p>} />
         </Routes>
           </div>
         </div>
