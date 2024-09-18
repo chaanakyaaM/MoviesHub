@@ -22,14 +22,14 @@
   box-sizing: border-box;
   z-index: 9999;
 }
-.navlinks a.active button{
+.navlinks a.active button {
   background-color: rgb(255, 255, 255);
   color: var(--primary-color);
 }
-.navlinks a.active{
+.navlinks a.active {
   background-color: rgba(0, 0, 255, 0);
 }
-.navbar a.active .logo{
+.navbar a.active .logo {
   background-color: var(--primary-color);
 }
 .navlinks {
@@ -318,32 +318,31 @@
   font-family: "Protest Guerrilla";
   color: rgb(228, 228, 228);
 }
-.add,.unadd {
+.add,
+.unadd {
   padding: 5px 20px;
   border-radius: 50px;
   color: black;
   background-color: rgb(56, 246, 56);
 }
-.unadd{
+.unadd {
   background-color: rgb(255, 99, 99);
 }
-.about{
+.about {
   color: white;
   height: 90%;
   width: 100%;
   padding: 100px 50px;
   margin-top: 100px;
-
 }
-.about h1{
+.about h1 {
   color: var(--primary-color);
   font-size: 50px;
   padding: 30px 0px;
-
 }
-.about p{
+.about p {
   font-size: 20px;
 }
-.help{
+.help {
   color: white;
 }
