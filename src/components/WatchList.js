@@ -6,6 +6,7 @@ function WatchList({datalist,watchlistsetter}) {
   function delhandler(title, year) {
     const updatedList = uniqueDatalist.filter(item => item.title !== title || item.year !== year);
     watchlistsetter(updatedList);
+    
   }
   return (
     <div className='watchlist-container'>

@@ -318,10 +318,14 @@
   font-family: "Protest Guerrilla";
   color: rgb(228, 228, 228);
 }
-.add {
+.add,.unadd {
   padding: 5px 20px;
   border-radius: 50px;
   color: black;
+  background-color: rgb(56, 246, 56);
+}
+.unadd{
+  background-color: rgb(255, 99, 99);
 }
 .about{
   color: white;
