@@ -28,7 +28,7 @@ function App() {
             <div className="two"><MovieDetails Id={id} plotsetter={setPlot} watchlistsetter={setwatchlist} watchlist={watchlist}></MovieDetails></div>
             <div className="center">MoviesHub</div>
             <div className="three"><span>Plot</span> : <i>{plot ? plot : 'Plot goes here...'}</i></div>
-            <div className="four"><WatchList datalist={watchlist} watchlistsetter={setwatchlist}/></div>
+            <div className="four"><WatchList datalist={watchlist} watchlistsetter={setwatchlist} idsetter={setid}/></div>
             </Container>}>
           </Route>
           <Route exact path="/about" element={<About/>} />
