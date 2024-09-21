@@ -10,7 +10,6 @@ function WatchList({datalist,watchlistsetter,idsetter}) {
   function clickhandler(id){
     idsetter(id)
   }
-  
   return (
     <div className='watchlist-container'>
         <h2>Watch List</h2>
