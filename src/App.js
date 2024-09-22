@@ -7,7 +7,8 @@ import Search from "./components/Search";
 import WatchList from "./components/WatchList";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import About from "./components/About";
-import Help from "./components/Help";
+
+import Contact from "./components/Contact";
 
 function App() {
   const [id, setid] = useState();
@@ -53,7 +54,7 @@ function App() {
               }
             ></Route>
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/help" element={<Help />} />
+            <Route exact path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>

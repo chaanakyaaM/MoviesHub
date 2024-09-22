@@ -33,7 +33,7 @@
   background-color: var(--primary-color);
 }
 .navlinks {
-  width: 370px;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -164,6 +164,7 @@
   font-size: 17px;
   border-radius: 0px 10px 10px 0px;
   background-color: var(--primary-color);
+  color: white;
 }
 .result-field {
   width: 98%;
@@ -259,6 +260,7 @@
   display: flex;
   transition-duration: 0.2s;
   cursor: pointer;
+  
 }
 .watchlist-elements:hover {
   background-color: rgb(36, 36, 36);
@@ -281,6 +283,7 @@
   gap: 10px;
   overflow: auto;
   padding-bottom: 10px;
+  overflow-x: hidden;
 }
 .watchlist-container h2 {
   position: sticky;
@@ -329,14 +332,56 @@
   padding: 100px 50px;
   margin-top: 100px;
 }
-.about h1 {
+.about h1,.contact h1 {
   color: var(--primary-color);
   font-size: 50px;
   padding: 30px 0px;
 }
-.about p {
+.about p,.contact p {
   font-size: 20px;
 }
-.help {
+.tech-used{
+  color: var(--primary-color);
+}
+.code a{
+  color: var(--primary-color);
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.contact {
   color: white;
+  align-self: flex-start;
+}
+.name,.email,.msg{
+  padding: 5px 10px;
+  font-size: 25px;
+}
+.name label,.email label,.msg label{
+  color: var(--primary-color);
+}
+.name input,.email input{
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding-left: 15px;
+}
+.msg textarea{
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+}
+.contact button{
+  background-color: var(--primary-color);
+  color: white;
+  height: 50px;
+  width: 102%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-size: 19px;
 }
