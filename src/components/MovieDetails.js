@@ -73,27 +73,27 @@ export default function MovieDetails({
             <img className="img-poster" src={movieData.Poster} alt="" />
             <div className="movie-details">
               <h1 className="title">
-                Title: <span>{movieData.Title}</span>
+                Title : <span> {movieData.Title}</span>
               </h1>
               <p>
-                Released:{" "}
+                Released :{" "}
                 {movieData.Released === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Released}</span>
+                  <span> {movieData.Released}</span>
                 )}
               </p>
               <p>
-                Genre:{" "}
+                Genre :{" "}
                 {movieData.Genre === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Genre}</span>
+                  <span> {movieData.Genre}</span>
                 )}
               </p>
               {plotsetter(movieData.Plot)}
               <p className="user">
-                IMDB Rating: ⭐{" "}
+                IMDB Rating : ⭐{" "}
                 <span>
                   {movieData.imdbRating} (
                   <img className="usericon" src={UsersIcon} alt="" />{" "}
@@ -101,51 +101,51 @@ export default function MovieDetails({
                 </span>
               </p>
               <p>
-                Type:{" "}
+                Type :{" "}
                 {movieData.Type === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Type}</span>
+                  <span> {movieData.Type}</span>
                 )}
               </p>
               <p>
-                Collections:{" "}
+                Collections :{" "}
                 {movieData.BoxOffice === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.BoxOffice}</span>
+                  <span> {movieData.BoxOffice}</span>
                 )}
               </p>
               <p>
-                Awards:{" "}
+                Awards :{" "}
                 {movieData.Awards === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Awards}</span>
+                  <span> {movieData.Awards}</span>
                 )}
               </p>
               <p>
-                Director:{" "}
+                Director :{" "}
                 {movieData.Director === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Director}</span>
+                  <span> {movieData.Director}</span>
                 )}
               </p>
               <p>
-                Cast:{" "}
+                Cast :{" "}
                 {movieData.Actors === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Actors}</span>
+                  <span> {movieData.Actors}</span>
                 )}
               </p>
               <p>
-                Runtime:{" "}
+                Runtime :{" "}
                 {movieData.Runtime === "N/A" ? (
-                  <span>unknown</span>
+                  <span> unknown</span>
                 ) : (
-                  <span>{movieData.Runtime}</span>
+                  <span> {movieData.Runtime}</span>
                 )}
               </p>
               <p>

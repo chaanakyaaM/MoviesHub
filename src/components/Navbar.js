@@ -8,7 +8,7 @@ function Navbar() {
         <div className="navlinks">
             <NavLink exact to='/' ><button>Home</button></NavLink>
             <NavLink to='/about' ><button>About</button></NavLink>
-            <NavLink to='/contact'><button>Contact</button></NavLink>
+            <NavLink to='/help'><button>FAQ</button></NavLink>
         </div>
     </div>
   );

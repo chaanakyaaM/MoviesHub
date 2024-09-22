@@ -33,7 +33,7 @@
   background-color: var(--primary-color);
 }
 .navlinks {
-  width: 400px;
+  width: 380px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -332,12 +332,12 @@
   padding: 100px 50px;
   margin-top: 100px;
 }
-.about h1,.contact h1 {
+.about h1 {
   color: var(--primary-color);
   font-size: 50px;
   padding: 30px 0px;
 }
-.about p,.contact p {
+.about p {
   font-size: 20px;
 }
 .tech-used{
@@ -350,38 +350,22 @@
   }
 }
 
-.contact {
+.help {
   color: white;
   align-self: flex-start;
+  padding: 50px;
 }
-.name,.email,.msg{
+.help h1{
+  font-size: 50px;
+  color: var(--primary-color);
+  padding: 10px;
+}
+.help p{
+  padding: 5px 25px;
+  font-size: 20px;
+}
+.help h2{
+  color: var(--primary-color);
   padding: 5px 10px;
   font-size: 25px;
-}
-.name label,.email label,.msg label{
-  color: var(--primary-color);
-}
-.name input,.email input{
-  height: 50px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  padding-left: 15px;
-}
-.msg textarea{
-  height: 150px;
-  width: 100%;
-  border-radius: 10px;
-  padding: 15px;
-}
-.contact button{
-  background-color: var(--primary-color);
-  color: white;
-  height: 50px;
-  width: 102%;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-left: 10px;
-  font-size: 19px;
 }
