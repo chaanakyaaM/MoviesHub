@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div className="about">
-      <h1>ABOUT</h1>
+      <h1>ABOUT MoviesHub</h1>
       <p>
         MoviesHub is a user-friendly website that allows users to
         easily search for films from the IMDb database. Users can view detailed
@@ -23,22 +23,6 @@ function About() {
         You can view the source code :{" "}
         <a href="https://github.com/chaanakyaaM/MoviesHub">here</a>{" "}
       </p>
-      <br />
-      {/* <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt labore
-        culpa, consequatur nemo cupiditate accusantium nihil vero libero
-        architecto enim quibusdam explicabo quam, omnis quos nam! Nulla ad
-        sapiente hic quasi magni praesentium beatae magnam nobis quae cum
-        debitis cumque labore, culpa eius recusandae consectetur mollitia? Nihil
-        similique expedita dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A praesentium
-        autem, dolorem natus necessitatibus in earum eius deleniti soluta nobis
-        cumque aperiam commodi fugiat laudantium doloribus debitis at. At
-        voluptatibus architecto omnis laboriosam quam quos deleniti quo
-        doloremque, obcaecati quia!
-      </p> */}
     </div>
   );
 }

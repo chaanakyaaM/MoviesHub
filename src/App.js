@@ -10,10 +10,9 @@ import About from "./components/About";
 import Help from "./components/Help";
 
 function App() {
-  const [id, setid] = useState();
+  const [id, setId] = useState();
   const [plot, setPlot] = useState("");
-  
-  const [watchlist, setwatchlist] = useState(() => {
+  const [watchlist, setWatchlist] = useState(() => {
     const storedWatchlist = localStorage.getItem("watchlist");
     return storedWatchlist ? JSON.parse(storedWatchlist) : [];
   });
@@ -26,48 +25,46 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <div className="main">
+        <main className="main">
           <Routes>
             <Route
-              exact
               path="/"
               element={
                 <Container>
-                  MovieHub
+                  <h1>MovieHub</h1>
                   <div className="one">
-                    <Search idhandler={setid} />
+                    <Search idhandler={setId} />
                   </div>
                   <div className="two">
                     <MovieDetails
                       Id={id}
                       plotsetter={setPlot}
-                      watchlistsetter={setwatchlist}
+                      watchlistsetter={setWatchlist}
                       watchlist={watchlist}
                     />
                   </div>
                   <div className="center">MoviesHub</div>
                   <div className="three">
                     <span>Plot: </span>
-                    <i>{plot ? plot : "Plot goes here..."}</i>
+                    <i>{plot || "Plot goes here..."}</i>
                   </div>
                   <div className="four">
                     <WatchList
                       datalist={watchlist}
-                      watchlistsetter={setwatchlist}
-                      idsetter={setid}
+                      watchlistsetter={setWatchlist}
+                      idsetter={setId}
                     />
                   </div>
                 </Container>
               }
             />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/help" element={<Help />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/help" element={<Help />} />
           </Routes>
-        </div>
+        </main>
       </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-

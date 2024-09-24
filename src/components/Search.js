@@ -1,46 +1,46 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Search({ idhandler }) {
-  const [searchVal, setsearchVal] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [searchVal, setSearchVal] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadingIndicator, setLoadingIndicator] = useState("Loading...");
   const controller = new AbortController();
-  const [loadingindicator, setloadingindicator] = useState("Loading...");
-  function Clickhandler() {
-    async function fetchData() {
-      setloading(false);
-      try {
-        setloadingindicator("Loading...");
-        let response = await fetch(
-          `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchVal}`,
-          { signal: controller.signal }
-        );
 
-        let data = await response.json();
-        console.log(data)
-        setSearchResult(data.Search || []);
-        if (data.Error==='Movie not found!'){
-          throw new Error('Movie not found');
-        }
-        setloading(true);
-      } catch (error) {
+  const fetchMovies = async () => {
+    setLoading(false);
+    setLoadingIndicator("Loading...");
 
-        alert("Movie not found, please check you spelling.");
-        setloadingindicator("Try seaching any other movie...");
+    try {
+      const response = await fetch(
+        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchVal}`,
+        { signal: controller.signal }
+      );
+
+      const data = await response.json();
+
+      if (data.Error === "Movie not found!") {
+        throw new Error("Movie not found");
       }
 
-      return () => {
-        controller.abort();
-      };
+      setSearchResults(data.Search || []);
+      setLoading(true);
+    } catch (error) {
+      alert("Movie not found, please check your spelling.");
+      setLoadingIndicator("Try searching for another movie...");
     }
-    fetchData();
-  }
-  function keyhandler(e) {
-    if (e === "Enter") {
-      Clickhandler();
+  };
+
+  const handleClick = () => {
+    fetchMovies();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      fetchMovies();
     }
-  }
+  };
+
   return (
     <div className="search">
       <div className="search-field">
@@ -48,14 +48,14 @@ function Search({ idhandler }) {
           type="text"
           placeholder="Search any movie..."
           value={searchVal}
-          onChange={(e) => setsearchVal(e.target.value)}
-          onKeyUpCapture={(e) => keyhandler(e.key)}
+          onChange={(e) => setSearchVal(e.target.value)}
+          onKeyUp={handleKeyPress}
         />
-        <button onClick={Clickhandler}>Search</button>
+        <button onClick={handleClick}>Search</button>
       </div>
-      <div className="result-field ">
+      <div className="result-field">
         {loading ? (
-          searchResult.map((item, index) => (
+          searchResults.map((item, index) => (
             <div
               className="data-element"
               onClick={() => idhandler(item.imdbID)}
@@ -63,20 +63,19 @@ function Search({ idhandler }) {
             >
               <div className="top-field">
                 <div className="title-details">
-                  <p key={item.Title}>{item.Title}</p>
-                  <p>Year: {item.Year} </p>
+                  <p>{item.Title}</p>
+                  <p>Year: {item.Year}</p>
                   <p>Type: {item.Type}</p>
                 </div>
-                {item.Poster !== "N/A" ? (
-                  <img src={item.Poster} alt={item.Title} />
-                ) : (
-                  <img src="" alt="Poster Not available" />
-                )}
+                <img
+                  src={item.Poster !== "N/A" ? item.Poster : ""}
+                  alt={item.Poster !== "N/A" ? item.Title : "Poster Not available"}
+                />
               </div>
             </div>
           ))
         ) : (
-          <p>{loadingindicator}</p>
+          <p>{loadingIndicator}</p>
         )}
       </div>
     </div>

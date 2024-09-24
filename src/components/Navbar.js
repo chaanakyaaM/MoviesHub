@@ -3,14 +3,22 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='navbar '>
-        <NavLink to='/' ><div className="logo">MoviesHub</div></NavLink>
-        <div className="navlinks">
-            <NavLink to='/' ><button>Home</button></NavLink>
-            <NavLink to='/about' ><button>About</button></NavLink>
-            <NavLink to='/help'><button>FAQ</button></NavLink>
-        </div>
-    </div>
+    <nav className="navbar">
+      <NavLink to="/" className="logo">
+        MoviesHub
+      </NavLink>
+      <div className="navlinks">
+        <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
+          <button>Home</button>
+        </NavLink>
+        <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
+          <button>About</button>
+        </NavLink>
+        <NavLink to="/help" className={({ isActive }) => (isActive ? 'active' : '')}>
+          <button>FAQ</button>
+        </NavLink>
+      </div>
+    </nav>
   );
 }
 
