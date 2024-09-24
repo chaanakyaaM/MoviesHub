@@ -13,7 +13,7 @@ function WatchList({datalist,watchlistsetter,idsetter}) {
   return (
     <div className='watchlist-container'>
         <h2>Watch List</h2>
-    {uniqueDatalist.map((item, index) => (
+    {uniqueDatalist.length > 0 ? (uniqueDatalist.map((item, index) => (
         <div key={index} className='watchlist-elements' onClick={(  )=>clickhandler(item.imdbid)}>
             <img src={item.poster} alt="" />
             <div className="watchlist-details">
@@ -22,7 +22,11 @@ function WatchList({datalist,watchlistsetter,idsetter}) {
             <button className='del' onClick={()=>delhandler(item.title,item.year)}><img src={DeleteImg} alt="" /></button>
             </div>
         </div>
-    ))}
+    ))) : (
+      <div className='watchlist-container'>
+        <p>Add movies to watchlist</p>
+      </div>
+    )}
     </div>
   )
 }

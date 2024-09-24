@@ -18,10 +18,14 @@ function Search({ idhandler }) {
         );
 
         let data = await response.json();
+        console.log(data)
         setSearchResult(data.Search || []);
-        for (let i = 0; i < data.Search.length; i++) {}
+        if (data.Error==='Movie not found!'){
+          throw new Error('Movie not found');
+        }
         setloading(true);
       } catch (error) {
+
         alert("Movie not found, please check you spelling.");
         setloadingindicator("Try seaching any other movie...");
       }
@@ -42,14 +46,14 @@ function Search({ idhandler }) {
       <div className="search-field">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search any movie..."
           value={searchVal}
           onChange={(e) => setsearchVal(e.target.value)}
           onKeyUpCapture={(e) => keyhandler(e.key)}
         />
         <button onClick={Clickhandler}>Search</button>
       </div>
-      <div className="result-field">
+      <div className="result-field ">
         {loading ? (
           searchResult.map((item, index) => (
             <div
