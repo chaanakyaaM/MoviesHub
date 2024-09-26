@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UsersIcon from "../users-icon.png";
+// import UsersIcon from "../users-icon.png";
 
 export default function MovieDetails({
   Id,
@@ -76,7 +76,7 @@ export default function MovieDetails({
               {plotsetter(movieData.Plot)}
               <p className="user">
                 IMDB Rating: ⭐ <span>{movieData.imdbRating} (
-                <img className="usericon" src={UsersIcon} alt="Users Icon" /> {movieData.imdbVotes})</span>
+                <img className="usericon" src='./assets/users-icon.png' alt="Users Icon" /> {movieData.imdbVotes})</span>
               </p>
               <p>Type: <span>{movieData.Type !== "N/A" ? movieData.Type : "unknown"}</span></p>
               <p>Collections: <span>{movieData.BoxOffice !== "N/A" ? movieData.BoxOffice : "unknown"}</span></p>

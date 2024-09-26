@@ -260,7 +260,6 @@
   display: flex;
   transition-duration: 0.2s;
   cursor: pointer;
-  
 }
 .watchlist-elements:hover {
   background-color: rgb(36, 36, 36);
@@ -330,22 +329,22 @@
   height: 90%;
   width: 100%;
   padding: 100px 50px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .about h1 {
   color: var(--primary-color);
   font-size: 50px;
-  padding: 30px 0px;
+  padding: 20px 0px;
 }
 .about p {
   font-size: 20px;
 }
-.tech-used{
+.tech-used {
   color: var(--primary-color);
 }
-.code a{
+.code a {
   color: var(--primary-color);
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -355,16 +354,16 @@
   align-self: flex-start;
   padding: 50px;
 }
-.help h1{
+.help h1 {
   font-size: 50px;
   color: var(--primary-color);
   padding: 10px;
 }
-.help p{
+.help p {
   padding: 5px 25px;
   font-size: 20px;
 }
-.help h2{
+.help h2 {
   color: var(--primary-color);
   padding: 5px 10px;
   font-size: 25px;

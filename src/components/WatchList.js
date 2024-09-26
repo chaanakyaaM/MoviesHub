@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteImg from '../delete-icon.png';
+// import DeleteImg from '../delete-icon.png';
 
 function WatchList({ datalist, watchlistsetter, idsetter }) {
 
@@ -29,7 +29,7 @@ function WatchList({ datalist, watchlistsetter, idsetter }) {
               <p>Title: <strong>{item.title}</strong></p>
               <p>Year: <strong>{item.year}</strong></p>
               <button className='del' onClick={() => delHandler(item.title, item.year)}>
-                <img src={DeleteImg} alt="Delete" />
+                <img src='./assets/delete-icon.png' alt="Delete" />
               </button>
             </div>
           </div>
